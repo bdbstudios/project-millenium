@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://6ba65s56co7n"]
+
+[ext_resource type="Script" uid="uid://belqkb5h18hh7" path="res://actors/player/player.gd" id="1_dthho"]
+[ext_resource type="Texture2D" uid="uid://dgksu7ow4tvy7" path="res://actors/player/sprites/Player.png" id="2_dthho"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dthho"]
+radius = 9.0
+
+[node name="Player" type="CharacterBody2D" unique_id=2958347 node_paths=PackedStringArray("camera")]
+script = ExtResource("1_dthho")
+camera = NodePath("Camera2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1778875597]
+shape = SubResource("CircleShape2D_dthho")
+
+[node name="Sprites" type="Node2D" parent="." unique_id=880683743]
+
+[node name="Body" type="Sprite2D" parent="Sprites" unique_id=1039449592]
+texture = ExtResource("2_dthho")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1046148266]
+zoom = Vector2(2, 2)

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://e5vk5xb188f5"]
+
+[ext_resource type="Texture2D" uid="uid://cpbvfk27kf6s2" path="res://world/resources/wood/sprites/Wood.png" id="1_i2lx2"]
+
+[node name="Wood" type="Node2D" unique_id=344680353]
+
+[node name="Sprites" type="Node2D" parent="." unique_id=1699133305]
+
+[node name="Body" type="Sprite2D" parent="Sprites" unique_id=951063486]
+scale = Vector2(2, 2)
+texture = ExtResource("1_i2lx2")

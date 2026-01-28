@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://df4rweggsub66"]
+
+[ext_resource type="Texture2D" uid="uid://bq2kam10sg4sh" path="res://world/resources/iron/sprites/Iron.png" id="1_lr3lf"]
+
+[node name="Iron" type="Node2D" unique_id=1637318187]
+
+[node name="Sprites" type="Node2D" parent="." unique_id=1187055779]
+
+[node name="Body" type="Sprite2D" parent="Sprites" unique_id=956816082]
+texture = ExtResource("1_lr3lf")
