@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://crb30nt8le1nu"]
+
+[ext_resource type="Script" uid="uid://d1wa24hpt0f8a" path="res://entities/common/mining_laser/mining_laser.gd" id="1_ux7ki"]
+
+[node name="MiningLaser" type="Node2D" unique_id=541666536 node_paths=PackedStringArray("ray_cast", "line_2d")]
+script = ExtResource("1_ux7ki")
+ray_cast = NodePath("RayCast2D")
+line_2d = NodePath("RayCast2D/Line2D")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=107690093]
+target_position = Vector2(0, 0)
+
+[node name="Line2D" type="Line2D" parent="RayCast2D" unique_id=1537237911]
+points = PackedVector2Array(0, 0, 0, 0)
+width = 2.0
+begin_cap_mode = 2
+end_cap_mode = 2
