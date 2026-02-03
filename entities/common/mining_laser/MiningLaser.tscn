@@ -2,16 +2,88 @@
 
 [ext_resource type="Script" uid="uid://d1wa24hpt0f8a" path="res://entities/common/mining_laser/mining_laser.gd" id="1_ux7ki"]
 
-[node name="MiningLaser" type="Node2D" unique_id=541666536 node_paths=PackedStringArray("ray_cast", "line_2d")]
+[sub_resource type="Gradient" id="Gradient_0b1w2"]
+offsets = PackedFloat32Array(0, 0.3, 0.7, 1)
+colors = PackedColorArray(0, 1, 1, 1, 0.53333336, 1, 1, 1, 0.53333336, 0.6666667, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_bam5g"]
+gradient = SubResource("Gradient_0b1w2")
+
+[sub_resource type="Curve" id="Curve_evwai"]
+_data = [Vector2(0, 0.20224726), 0.0, 0.0, 0, 0, Vector2(0.89958155, 0.79775286), 0.0, 0.0, 0, 0, Vector2(1, 0.10112369), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_e8rsd"]
+curve = SubResource("Curve_evwai")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6u84k"]
+particle_flag_disable_z = true
+spread = 0.0
+initial_velocity_min = 15.0
+initial_velocity_max = 20.0
+angular_velocity_min = 39.999985
+angular_velocity_max = 44.999985
+gravity = Vector3(0, 0, 0)
+scale_min = 0.79999995
+scale_max = 0.79999995
+scale_curve = SubResource("CurveTexture_e8rsd")
+color = Color(0, 1, 1, 1)
+color_ramp = SubResource("GradientTexture1D_bam5g")
+
+[sub_resource type="Gradient" id="Gradient_ux7ki"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(1, 1, 0.53333336, 1, 1, 0.6666667, 0.26666668, 1, 1, 0.26666668, 0, 0.53333336)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_0xjqi"]
+gradient = SubResource("Gradient_ux7ki")
+
+[sub_resource type="Curve" id="Curve_0b1w2"]
+_data = [Vector2(0, 0.49438208), 0.0, 0.0, 0, 0, Vector2(0.251046, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_bam5g"]
+curve = SubResource("Curve_0b1w2")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_evwai"]
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+spread = 180.0
+initial_velocity_min = 10.0
+initial_velocity_max = 15.0
+angular_velocity_min = 149.99998
+angular_velocity_max = 179.99998
+gravity = Vector3(0, 9.8, 0)
+linear_accel_min = -10.000002
+linear_accel_max = -10.000002
+radial_accel_min = 1.9999977
+radial_accel_max = 4.9999976
+damping_min = 0.8
+damping_max = 0.8
+scale_min = 0.5
+scale_curve = SubResource("CurveTexture_bam5g")
+color = Color(1, 1, 0.6666667, 1)
+color_ramp = SubResource("GradientTexture1D_0xjqi")
+hue_variation_min = -2.2351742e-08
+hue_variation_max = 0.09999997
+
+[node name="MiningLaser" type="Line2D" unique_id=680533546]
 script = ExtResource("1_ux7ki")
-ray_cast = NodePath("RayCast2D")
-line_2d = NodePath("RayCast2D/Line2D")
 
-[node name="RayCast2D" type="RayCast2D" parent="." unique_id=107690093]
-target_position = Vector2(0, 0)
+[node name="BeamParticles" type="GPUParticles2D" parent="." unique_id=449692947]
+amount = 50
+lifetime = 0.8
+preprocess = 0.5
+randomness = 0.1
+fract_delta = false
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_6u84k")
 
-[node name="Line2D" type="Line2D" parent="RayCast2D" unique_id=1537237911]
-points = PackedVector2Array(0, 0, 0, 0)
-width = 2.0
-begin_cap_mode = 2
-end_cap_mode = 2
+[node name="ImpactParticles" type="GPUParticles2D" parent="." unique_id=1901795411]
+amount = 30
+lifetime = 0.5
+fract_delta = false
+process_material = SubResource("ParticleProcessMaterial_evwai")
+
+[node name="StartPoint" type="Marker2D" parent="." unique_id=1326555216]
+
+[node name="EndPoint" type="Marker2D" parent="." unique_id=198891434]

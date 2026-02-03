@@ -2,24 +2,28 @@
 
 [ext_resource type="Script" uid="uid://belqkb5h18hh7" path="res://entities/player/player.gd" id="1_dthho"]
 [ext_resource type="Texture2D" uid="uid://dgksu7ow4tvy7" path="res://entities/player/assets/Player.png" id="2_dthho"]
-[ext_resource type="PackedScene" uid="uid://crb30nt8le1nu" path="res://entities/common/mining_laser/MiningLaser.tscn" id="3_l3c03"]
+[ext_resource type="Script" uid="uid://pcyr8u3ilri6" path="res://entities/player/behaviors/mining_behavior.gd" id="3_eaotn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dthho"]
 radius = 8.0
 
-[node name="Player" type="CharacterBody2D" unique_id=2958347 node_paths=PackedStringArray("camera", "mining_laser")]
+[node name="Player" type="CharacterBody2D" unique_id=2958347]
+collision_layer = 16
+collision_mask = 3
 script = ExtResource("1_dthho")
-camera = NodePath("Camera2D")
-mining_laser = NodePath("MiningLaser")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1778875597]
 shape = SubResource("CircleShape2D_dthho")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1046148266]
-zoom = Vector2(3, 3)
-
-[node name="MiningLaser" parent="." unique_id=541666536 instance=ExtResource("3_l3c03")]
-color = Color(0.3019608, 0.60784316, 0.9019608, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1039449592]
 texture = ExtResource("2_dthho")
+
+[node name="MiningLaserAnchor" type="Marker2D" parent="." unique_id=54102702]
+
+[node name="Behaviors" type="Node" parent="." unique_id=611495920]
+
+[node name="MiningBehavior" type="Node" parent="Behaviors" unique_id=1895125830]
+script = ExtResource("3_eaotn")
+metadata/_custom_type_script = "uid://pcyr8u3ilri6"

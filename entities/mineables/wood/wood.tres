@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Mineable" format=3 uid="uid://butggksuye3xc"]
+
+[ext_resource type="Script" uid="uid://immfa4kuytlf" path="res://entities/mineables/mineable.gd" id="1_shasa"]
+[ext_resource type="Texture2D" uid="uid://cpbvfk27kf6s2" path="res://entities/mineables/wood/assets/Wood.png" id="2_cyfda"]
+
+[resource]
+script = ExtResource("1_shasa")
+resource_type = "wood"
+texture = ExtResource("2_cyfda")
+label = "Wood"
+metadata/_custom_type_script = "uid://immfa4kuytlf"

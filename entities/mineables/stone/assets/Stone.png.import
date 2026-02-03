@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7g6vxwl4ej1s"
-path="res://.godot/imported/Coal.png-ff90047d8bffd7a72730a511364deb25.ctex"
+uid="uid://dyatnc776guff"
+path="res://.godot/imported/Stone.png-3937bde9f57e4d1456d40fff48096a4d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/common/gatherables/coal/sprites/Coal.png"
-dest_files=["res://.godot/imported/Coal.png-ff90047d8bffd7a72730a511364deb25.ctex"]
+source_file="res://entities/mineables/stone/assets/Stone.png"
+dest_files=["res://.godot/imported/Stone.png-3937bde9f57e4d1456d40fff48096a4d.ctex"]
 
 [params]
 

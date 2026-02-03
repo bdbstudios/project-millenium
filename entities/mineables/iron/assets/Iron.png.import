@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bq2kam10sg4sh"
-path="res://.godot/imported/Iron.png-c7df48be9971ffcf9ebcd84edd7e961b.ctex"
+path="res://.godot/imported/Iron.png-c44fcdfb2dcd3203508c773a78cff2dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/common/gatherables/iron/sprites/Iron.png"
-dest_files=["res://.godot/imported/Iron.png-c7df48be9971ffcf9ebcd84edd7e961b.ctex"]
+source_file="res://entities/mineables/iron/assets/Iron.png"
+dest_files=["res://.godot/imported/Iron.png-c44fcdfb2dcd3203508c773a78cff2dd.ctex"]
 
 [params]
 

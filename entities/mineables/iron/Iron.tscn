@@ -1,13 +1,10 @@
 [gd_scene format=3 uid="uid://df4rweggsub66"]
 
-[ext_resource type="Script" uid="uid://dg13kupho4iww" path="res://scenes/common/gatherables/iron/iron.gd" id="1_kguyi"]
-[ext_resource type="Texture2D" uid="uid://bq2kam10sg4sh" path="res://scenes/common/gatherables/iron/sprites/Iron.png" id="1_lr3lf"]
+[ext_resource type="Texture2D" uid="uid://bq2kam10sg4sh" path="res://entities/mineables/iron/assets/Iron.png" id="1_lr3lf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1buje"]
 
-[node name="Iron" type="Node2D" unique_id=1637318187 node_paths=PackedStringArray("static_body")]
-script = ExtResource("1_kguyi")
-static_body = NodePath("StaticBody2D")
+[node name="Iron" type="Node2D" unique_id=1637318187]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=956816082]
 texture = ExtResource("1_lr3lf")

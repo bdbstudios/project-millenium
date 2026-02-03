@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Mineable" format=3 uid="uid://bjcw3lvefxxxy"]
+
+[ext_resource type="Script" uid="uid://immfa4kuytlf" path="res://entities/mineables/mineable.gd" id="1_1a082"]
+[ext_resource type="Texture2D" uid="uid://bq2kam10sg4sh" path="res://entities/mineables/iron/assets/Iron.png" id="2_yag6c"]
+
+[resource]
+script = ExtResource("1_1a082")
+resource_type = "iron"
+texture = ExtResource("2_yag6c")
+label = "Iron"
+metadata/_custom_type_script = "uid://immfa4kuytlf"

@@ -2,22 +2,20 @@ class_name Player extends CharacterBody2D
 
 @export var move_speed: float = 200.0
 
-@export var camera: Camera2D
-@export var initial_zoom: float
+@export_category("Camera Settings")
+@export var initial_zoom: float = 3.0
 @export var min_zoom: float = 0.5
 @export var max_zoom: float = 5.0
 @export var zoom_step: float = 0.5
 @export var zoom_speed: float = 5.0
 
-@export var mining_laser: MiningLaser
+@onready var camera: Camera2D = $Camera2D
+@onready var mining_behavior: MiningBehavior = $Behaviors/MiningBehavior
 
 var target_zoom: float
 
 func _ready() -> void:
-	assert(camera, "No camera was provided")
-	assert(mining_laser, "No mining laser was provided")
-
-	initial_zoom = camera.zoom.x
+	camera.zoom.x = initial_zoom
 	zoom_reset()
 
 func _process(delta: float) -> void:
@@ -32,11 +30,6 @@ func _process(delta: float) -> void:
 			camera_zoom = target_zoom
 
 	camera.zoom = Vector2(camera_zoom, camera_zoom)
-	
-	if Input.is_action_pressed("fire"):
-		mining_laser.is_casting = true
-	else:
-		mining_laser.is_casting = false
 
 func _physics_process(_delta: float) -> void:
 	var move_direction = Vector2(

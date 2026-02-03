@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpbvfk27kf6s2"
-path="res://.godot/imported/Wood.png-bef0a210525c020c0f2f42b09c4e7c97.ctex"
+uid="uid://b7g6vxwl4ej1s"
+path="res://.godot/imported/Coal.png-5b369f03598521321cac9a032aa2ddfb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/common/gatherables/wood/sprites/Wood.png"
-dest_files=["res://.godot/imported/Wood.png-bef0a210525c020c0f2f42b09c4e7c97.ctex"]
+source_file="res://entities/mineables/coal/assets/Coal.png"
+dest_files=["res://.godot/imported/Coal.png-5b369f03598521321cac9a032aa2ddfb.ctex"]
 
 [params]
 
