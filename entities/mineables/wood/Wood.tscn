@@ -1,17 +1,22 @@
 [gd_scene format=3 uid="uid://e5vk5xb188f5"]
 
+[ext_resource type="Script" uid="uid://bddrmry2fab5x" path="res://entities/mineables/wood/wood.gd" id="1_7q7oe"]
 [ext_resource type="Texture2D" uid="uid://cpbvfk27kf6s2" path="res://entities/mineables/wood/assets/Wood.png" id="1_i2lx2"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_i2lx2"]
-radius = 15.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7q7oe"]
+size = Vector2(16, 16)
 
-[node name="Wood" type="Node2D" unique_id=344680353]
+[node name="Wood" type="Node2D" unique_id=344680353 node_paths=PackedStringArray("static_body")]
+script = ExtResource("1_7q7oe")
+type = "wood"
+static_body = NodePath("StaticBody2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=951063486]
-scale = Vector2(2, 2)
 texture = ExtResource("1_i2lx2")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=341960759]
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1792761334]
-shape = SubResource("CircleShape2D_i2lx2")
+shape = SubResource("RectangleShape2D_7q7oe")

@@ -1,67 +1,97 @@
 class_name MiningBehavior extends Node
 
-signal mining_started(resource: Mineable)
-signal mining_stopped()
+#signal mining_started(resource: Mineable)
+#signal mining_stopped()
+#
+#var is_mining: bool = false
+#var target_resource: Mineable
+#var tile_map_layer: TileMapLayer
+#
+#var timer: Timer
+#var marker: Marker2D
+#
+#func _ready() -> void:
+	#tile_map_layer = get_tree().get_first_node_in_group("tile_map_mineables")
+#
+	#assert(tile_map_layer, "No tile map layer was found")
+#
+	#timer = Timer.new()
+	#timer.timeout.connect(_on_mining_tick)
+	#add_child(timer)
+#
+#func _input(event: InputEvent) -> void:
+	#if event.is_action_pressed("select"):
+		#select_cell()
+#
+	#if event.is_action_pressed("cancel"):
+		#deselect_cell()
+#
+#func select_cell() -> void:
+	#var target_coords = tile_map_layer.local_to_map(tile_map_layer.get_local_mouse_position())
+	#var cell_data = tile_map_layer.get_cell_tile_data(target_coords)
+	#
+	#print(cell_data)
+#
+	#if not cell_data:
+		#target_resource = null
+		#return
+		#
+	#target_resource = cell_data.get_custom_data("resource_type")
+	#
+	#if not target_resource:
+		#return
+#
+	#start_mining()
+#
+#func start_mining() -> void:
+	#if is_mining:
+		#stop_mining()
+#
+	#timer.start(target_resource.mining_time)
+#
+	#is_mining = true
+	#mining_started.emit(target_resource)
+	#print("Start")
+#
+#func stop_mining() -> void:
+	#timer.stop()
+#
+	#is_mining = false
+	#mining_stopped.emit()
+	#print("Stop")
+#
+#func deselect_cell() -> void:
+	#stop_mining()
+#
+#func _on_mining_tick() -> void:
+	#print("Tick (add resource ", target_resource.label ," x", target_resource.amount_given ,")")
 
-var is_mining: bool = false
-var target_resource: Mineable
-var tile_map_layer: TileMapLayer
 
-var timer: Timer
 
-func _ready() -> void:
-	tile_map_layer = get_tree().get_first_node_in_group("mineables")
 
-	assert(tile_map_layer, "No tile map layer was found")
 
-	timer = Timer.new()
-	timer.timeout.connect(_on_mining_tick)
-	add_child(timer)
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("select"):
-		select_cell()
 
-	if event.is_action_pressed("cancel"):
-		deselect_cell()
 
-func select_cell() -> void:
-	var target_cell = tile_map_layer.local_to_map(tile_map_layer.get_local_mouse_position())
-	var cell_data = tile_map_layer.get_cell_tile_data(target_cell)
-	
-	if not cell_data:
-		target_resource = null
-		return
-		
-	target_resource = cell_data.get_custom_data("resource_type")
-	
-	if not target_resource:
-		return
 
-	start_mining()
 
-func start_mining() -> void:
-	if is_mining:
-		stop_mining()
 
-	timer.start(target_resource.mining_time)
 
-	is_mining = true
-	mining_started.emit(target_resource)
-	print("Start")
 
-func stop_mining() -> void:
-	timer.stop()
 
-	is_mining = false
-	mining_stopped.emit()
-	print("Stop")
 
-func deselect_cell() -> void:
-	stop_mining()
 
-func _on_mining_tick() -> void:
-	print("Tick (add resource ", target_resource.label ," x", target_resource.amount_given ,")")
+
+
+
+
+
+
+
+
+
+
+
 
 
 

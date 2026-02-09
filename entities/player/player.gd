@@ -10,17 +10,25 @@ class_name Player extends CharacterBody2D
 @export var zoom_speed: float = 5.0
 
 @onready var camera: Camera2D = $Camera2D
+@onready var look_at_anchor: Marker2D = $LookAtAnchor
 @onready var mining_behavior: MiningBehavior = $Behaviors/MiningBehavior
 
+var should_follow_cursor: bool = true
 var target_zoom: float
 
 func _ready() -> void:
 	camera.zoom.x = initial_zoom
 	zoom_reset()
 
+	#mining_behavior.mining_started.connect(_on_mining_start)
+	#mining_behavior.mining_stopped.connect(_on_mining_stop)
+
 func _process(delta: float) -> void:
-	look_at(get_global_mouse_position())
-	
+	if should_follow_cursor:
+		look_at_anchor.global_position = get_global_mouse_position()
+
+	look_at(look_at_anchor.global_position)
+
 	var camera_zoom = camera.zoom.x
 	
 	if not is_equal_approx(camera_zoom, target_zoom):
@@ -46,9 +54,17 @@ func _input(event: InputEvent) -> void:
 
 	if event.is_action_pressed("zoom_out"):
 		zoom_out()
-		
+
 	if event.is_action_pressed("zoom_reset"):
 		zoom_reset()
+
+#func _on_mining_start(_resource: Mineable) -> void:
+	#look_at_anchor.global_position = get_global_mouse_position()
+	#should_follow_cursor = false
+#
+#func _on_mining_stop() -> void:
+	#look_at_anchor.global_position = get_global_mouse_position()
+	#should_follow_cursor = true
 
 func zoom_in() -> void:
 	target_zoom = clamp(target_zoom + zoom_step, min_zoom, max_zoom)

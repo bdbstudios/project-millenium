@@ -97,6 +97,7 @@ cancel={
 
 2d_physics/layer_1="Environment"
 2d_physics/layer_2="Mineables"
+2d_physics/layer_3="Structures"
 2d_physics/layer_5="Player Physics"
 2d_physics/layer_6="Player Hurtbox"
 2d_physics/layer_7="Player Detection"

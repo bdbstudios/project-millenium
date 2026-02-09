@@ -9,7 +9,6 @@ radius = 8.0
 
 [node name="Player" type="CharacterBody2D" unique_id=2958347]
 collision_layer = 16
-collision_mask = 3
 script = ExtResource("1_dthho")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1778875597]
@@ -19,6 +18,17 @@ shape = SubResource("CircleShape2D_dthho")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1039449592]
 texture = ExtResource("2_dthho")
+
+[node name="LookAtAnchor" type="Marker2D" parent="." unique_id=1308092014]
+top_level = true
+
+[node name="ColorRect" type="ColorRect" parent="LookAtAnchor" unique_id=1547167768]
+visible = false
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+mouse_filter = 2
 
 [node name="MiningLaserAnchor" type="Marker2D" parent="." unique_id=54102702]
 

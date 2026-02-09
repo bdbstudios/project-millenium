@@ -1,15 +1,22 @@
 [gd_scene format=3 uid="uid://df4rweggsub66"]
 
 [ext_resource type="Texture2D" uid="uid://bq2kam10sg4sh" path="res://entities/mineables/iron/assets/Iron.png" id="1_lr3lf"]
+[ext_resource type="Script" uid="uid://coyom2o0qh14f" path="res://entities/mineables/iron/iron.gd" id="1_xipqw"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_1buje"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xipqw"]
+size = Vector2(16, 16)
 
-[node name="Iron" type="Node2D" unique_id=1637318187]
+[node name="Iron" type="Node2D" unique_id=1637318187 node_paths=PackedStringArray("static_body")]
+script = ExtResource("1_xipqw")
+type = "iron"
+static_body = NodePath("StaticBody2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=956816082]
 texture = ExtResource("1_lr3lf")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1540348832]
+collision_layer = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2029584931]
-shape = SubResource("CircleShape2D_1buje")
+shape = SubResource("RectangleShape2D_xipqw")
