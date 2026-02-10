@@ -6,17 +6,14 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7q7oe"]
 size = Vector2(16, 16)
 
-[node name="Wood" type="Node2D" unique_id=344680353 node_paths=PackedStringArray("static_body")]
+[node name="Wood" type="StaticBody2D" unique_id=1217718349]
+collision_layer = 2
+collision_mask = 0
 script = ExtResource("1_7q7oe")
 type = "wood"
-static_body = NodePath("StaticBody2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1792761334]
+shape = SubResource("RectangleShape2D_7q7oe")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=951063486]
 texture = ExtResource("1_i2lx2")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=341960759]
-collision_layer = 2
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1792761334]
-shape = SubResource("RectangleShape2D_7q7oe")

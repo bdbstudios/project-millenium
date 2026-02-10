@@ -6,15 +6,14 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_31tph"]
 size = Vector2(16, 16)
 
-[node name="Core" type="Node2D" unique_id=753126444]
+[node name="Core" type="StaticBody2D" unique_id=1288676237]
+collision_layer = 4
+collision_mask = 0
 script = ExtResource("1_31tph")
+type = "core"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1019181830]
+shape = SubResource("RectangleShape2D_31tph")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=827291041]
 texture = ExtResource("2_6so47")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1797542952]
-collision_layer = 4
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1019181830]
-shape = SubResource("RectangleShape2D_31tph")

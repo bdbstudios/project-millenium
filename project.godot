@@ -45,6 +45,10 @@ folder_colors={
 "res://ui/": "teal"
 }
 
+[global_group]
+
+player="The Player group"
+
 [input]
 
 move_up={

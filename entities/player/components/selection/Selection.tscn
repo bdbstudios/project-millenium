@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://csy5nch8e5un8"]
+
+[ext_resource type="Script" uid="uid://dbqrijtjlr2sh" path="res://entities/player/components/selection/selection.gd" id="1_vvwlj"]
+[ext_resource type="Texture2D" uid="uid://cos5ov25rwi1a" path="res://entities/player/components/selection/assets/Selection.png" id="2_0f632"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vvwlj"]
+size = Vector2(8, 8)
+
+[node name="Selection" type="Area2D" unique_id=1298342399]
+collision_layer = 0
+collision_mask = 6
+script = ExtResource("1_vvwlj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=938586689]
+shape = SubResource("RectangleShape2D_vvwlj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2010844098]
+texture = ExtResource("2_0f632")

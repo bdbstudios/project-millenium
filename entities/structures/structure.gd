@@ -1,7 +1,3 @@
-class_name Structure extends Resource
+class_name Structure extends StaticBody2D
 
-@export var structure_type: String
-
-@export_category("Visuals")
-@export var texture: Texture2D
-@export var label: String
+@export var type: String

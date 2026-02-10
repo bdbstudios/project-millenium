@@ -6,17 +6,14 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wrve3"]
 size = Vector2(16, 16)
 
-[node name="Coal" type="Node2D" unique_id=2037655940 node_paths=PackedStringArray("static_body")]
+[node name="Coal" type="StaticBody2D" unique_id=1482191458]
+collision_layer = 2
+collision_mask = 0
 script = ExtResource("1_wrve3")
 type = "coal"
-static_body = NodePath("StaticBody2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1965140843]
+shape = SubResource("RectangleShape2D_wrve3")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1497587579]
 texture = ExtResource("1_otaaj")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=621480764]
-collision_layer = 2
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1965140843]
-shape = SubResource("RectangleShape2D_wrve3")
