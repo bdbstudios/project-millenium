@@ -36,7 +36,7 @@ func select_overlapping() -> void:
 	# TODO: check if this works at scale?
 	
 	var overlapping_bodies = self.get_overlapping_bodies()
-	
+
 	if not overlapping_bodies:
 		selected_tile = null
 		return

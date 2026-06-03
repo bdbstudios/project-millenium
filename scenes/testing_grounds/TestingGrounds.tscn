@@ -1,13 +1,14 @@
 [gd_scene format=4 uid="uid://s85mspbtmsuc"]
 
 [ext_resource type="Texture2D" uid="uid://bvoto2ymg77m1" path="res://scenes/common/tilesets/grass/Grass.png" id="1_fl1nn"]
-[ext_resource type="PackedScene" uid="uid://e5vk5xb188f5" path="res://entities/mineables/wood/Wood.tscn" id="2_1lecw"]
+[ext_resource type="PackedScene" uid="uid://e5vk5xb188f5" path="res://entities/selectables/mineables/wood/Wood.tscn" id="2_1lecw"]
 [ext_resource type="PackedScene" uid="uid://6ba65s56co7n" path="res://entities/player/Player.tscn" id="2_3ds0f"]
-[ext_resource type="PackedScene" uid="uid://dbqgfu0gmky5j" path="res://entities/mineables/stone/Stone.tscn" id="3_fl1nn"]
-[ext_resource type="PackedScene" uid="uid://df4rweggsub66" path="res://entities/mineables/iron/Iron.tscn" id="4_3ds0f"]
-[ext_resource type="PackedScene" uid="uid://c84yo6auwbu4t" path="res://entities/mineables/coal/Coal.tscn" id="5_lakfx"]
+[ext_resource type="PackedScene" uid="uid://dbqgfu0gmky5j" path="res://entities/selectables/mineables/stone/Stone.tscn" id="3_fl1nn"]
+[ext_resource type="PackedScene" uid="uid://df4rweggsub66" path="res://entities/selectables/mineables/iron/Iron.tscn" id="4_3ds0f"]
+[ext_resource type="PackedScene" uid="uid://c84yo6auwbu4t" path="res://entities/selectables/mineables/coal/Coal.tscn" id="5_lakfx"]
 [ext_resource type="PackedScene" uid="uid://cvyhh82fca7se" path="res://menus/building_toolbar/BuildingToolbar.tscn" id="6_wyi2q"]
-[ext_resource type="PackedScene" uid="uid://0cir3wximkvv" path="res://entities/structures/core/Core.tscn" id="13_a6v6s"]
+[ext_resource type="PackedScene" uid="uid://biopf86xssvku" path="res://entities/selectables/structures/miner/Miner.tscn" id="7_jfa4k"]
+[ext_resource type="PackedScene" uid="uid://0cir3wximkvv" path="res://entities/selectables/structures/core/Core.tscn" id="13_a6v6s"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wyi2q"]
 texture = ExtResource("1_fl1nn")
@@ -67,9 +68,11 @@ terrain_set_0/terrain_3/color = Color(0.60784316, 0.67058825, 0.69803923, 1)
 sources/0 = SubResource("TileSetScenesCollectionSource_fl1nn")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_2ssg1"]
-resource_name = "Core"
+resource_name = "Structures"
 scenes/0/scene = ExtResource("13_a6v6s")
 scenes/0/display_placeholder = true
+scenes/1/scene = ExtResource("7_jfa4k")
+scenes/1/display_placeholder = true
 
 [sub_resource type="TileSet" id="TileSet_khcba"]
 physics_layer_0/collision_layer = 4
@@ -77,6 +80,8 @@ physics_layer_0/collision_mask = 0
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Core"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
+terrain_set_0/terrain_1/name = "Miner"
+terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
 sources/0 = SubResource("TileSetScenesCollectionSource_2ssg1")
 
 [node name="TestingGrounds" type="Node2D" unique_id=182621348]
@@ -92,7 +97,7 @@ tile_map_data = PackedByteArray("AAADAAEAAAAAAAAAAQADAAMAAAAAAAAAAgADAAUAAAAAAAA
 tile_set = SubResource("TileSet_2ssg1")
 
 [node name="Structures" type="TileMapLayer" parent="TileMap" unique_id=1402226590 groups=["tile_map_structures"]]
-tile_map_data = PackedByteArray("AAADAP7/AAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAADAP7/AAAAAAAAAAADAPz/AAAAAAAAAQA=")
 tile_set = SubResource("TileSet_khcba")
 
 [node name="Player" parent="." unique_id=291851491 instance=ExtResource("2_3ds0f")]

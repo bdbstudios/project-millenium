@@ -1,8 +1,13 @@
 class_name Player extends CharacterBody2D
 
 @export_category("Player Stats")
-@export var move_speed: float = 200.0
 @export var selection_range: float = 10.0 # In Tiles (16x16)
+@export var base_max_speed : float = 300.0
+@export var base_acceleration : float = 15.0
+@export var base_friction : float = 10.0
+@export var speed_weight_factor: float = 0.5
+@export var acceleration_weight_factor: float = 0.7
+@export var friction_weight_factor: float = 0.8
 
 @export_category("Camera Settings")
 @export var initial_zoom: float = 3.0
@@ -16,12 +21,15 @@ class_name Player extends CharacterBody2D
 
 var target_zoom: float
 
+var current_cargo_weight : float = 0.0  # Scale from 0.0 to 1.0 (Full)
+
 func _ready() -> void:
 	camera.zoom.x = initial_zoom
 	zoom_reset()
 
 func _process(delta: float) -> void:
-	look_at(selection.global_position)
+	# Only look at something when we interact with it?
+	#look_at(selection.global_position)
 
 	var camera_zoom = camera.zoom.x
 	
@@ -34,11 +42,17 @@ func _process(delta: float) -> void:
 	camera.zoom = Vector2(camera_zoom, camera_zoom)
 
 func _physics_process(_delta: float) -> void:
-	var move_direction = Vector2(
-		Input.get_action_strength("move_right") - Input.get_action_strength("move_left"),
-		Input.get_action_strength("move_down") - Input.get_action_strength("move_up"))
-	
-	self.velocity = move_direction * move_speed
+	var max_speed = base_max_speed * (1.0 - (current_cargo_weight * speed_weight_factor))
+	var acceleration = base_acceleration * (1.0 - (current_cargo_weight * acceleration_weight_factor))
+	var friction = base_friction * (1.0 - (current_cargo_weight * friction_weight_factor))
+
+	var input_vector = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+
+	if input_vector != Vector2.ZERO:
+		self.rotation = input_vector.angle()
+		self.velocity = velocity.move_toward(input_vector * max_speed, acceleration)
+	else:
+		self.velocity = velocity.move_toward(Vector2.ZERO, friction)
 
 	self.move_and_slide()
 
