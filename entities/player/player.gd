@@ -16,8 +16,13 @@ class_name Player extends CharacterBody2D
 @export var zoom_step: float = 0.5
 @export var zoom_speed: float = 5.0
 
+# TODO: hotbar manager to get which scenes should be placeable?
+@export_category("Hotbar (TEMP)")
+@export var core_scene: PackedScene = preload("res://entities/selectables/structures/core/Core.tscn")
+
 @onready var camera: Camera2D = $Camera2D
 @onready var selection: Selection = $Components/Selection
+@onready var building_placement_manager: BuildingPlacementManager = $Components/BuildingPlacementManager
 
 var target_zoom: float
 
@@ -65,6 +70,20 @@ func _input(event: InputEvent) -> void:
 
 	if event.is_action_pressed("zoom_reset"):
 		zoom_reset()
+		
+	if event.is_action_pressed("hotbar_1"):
+		if building_placement_manager.is_active:
+			building_placement_manager.cancel_placement_mode()
+		else:
+			building_placement_manager.enter_placement_mode(core_scene)
+	
+	if event.is_action_pressed("select"):
+		if building_placement_manager.is_active:
+			building_placement_manager.place_structure()
+	
+	if event.is_action_pressed("cancel"):
+		if building_placement_manager.is_active:
+			building_placement_manager.cancel_placement_mode()
 
 func zoom_in() -> void:
 	target_zoom = clamp(target_zoom + zoom_step, min_zoom, max_zoom)

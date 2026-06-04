@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dhg2e2vykmgfn"]
+
+[ext_resource type="Script" uid="uid://b2pkrkxiahi3r" path="res://entities/player/components/building_placement_manager/building_placement_manager.gd" id="1_0erww"]
+
+[node name="BuildingPlacementManager" type="Node2D" unique_id=252717354]
+script = ExtResource("1_0erww")

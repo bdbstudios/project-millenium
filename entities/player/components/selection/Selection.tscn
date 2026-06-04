@@ -8,7 +8,7 @@ size = Vector2(8, 8)
 
 [node name="Selection" type="Area2D" unique_id=1298342399]
 collision_layer = 0
-collision_mask = 6
+collision_mask = 14
 script = ExtResource("1_vvwlj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=938586689]

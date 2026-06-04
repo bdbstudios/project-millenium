@@ -4,5 +4,6 @@ class_name Core extends Structure
 # TODO: the core should receive resources mined and add to the inventory
 
 func _ready() -> void:
+	super()
 	self.type = "core"
 	print("Hello I'm a Core!")

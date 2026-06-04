@@ -7,6 +7,8 @@ var player: Player
 var selected_tile: Node2D
 var tile_map: TileMapLayer
 
+var is_active: bool = false
+
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
 	tile_map = get_tree().get_first_node_in_group("tile_map_terrain")
@@ -22,6 +24,9 @@ func _process(_delta: float) -> void:
 			clear_selection()
 
 func _input(event: InputEvent) -> void:
+	if player.building_placement_manager.is_active:
+		return
+	
 	if event.is_action_pressed("select"):
 		if not selected_tile:
 			select_overlapping()
