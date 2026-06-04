@@ -14,6 +14,8 @@
 
 # About the game
 
+![wip_prototype_june_2026.png](/media/screenshots/wip_prototype_june_2026.png)
+
  Project Millennium is a top-down, 2D factory automation game where building the production line is only half the battle. Mine resources, scale production across the grid, and master an intricate momentum-based movement model to execute vital automated deliveries.
 
 ## Developed by BDB Studios - 2026
