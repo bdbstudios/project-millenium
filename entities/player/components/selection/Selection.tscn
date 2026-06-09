@@ -15,4 +15,5 @@ script = ExtResource("1_vvwlj")
 shape = SubResource("RectangleShape2D_vvwlj")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2010844098]
+visible = false
 texture = ExtResource("2_0f632")

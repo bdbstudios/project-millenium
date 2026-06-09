@@ -9,6 +9,8 @@ var tile_map: TileMapLayer
 
 var is_active: bool = false
 
+@onready var sprite_2d: Sprite2D = $Sprite2D
+
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
 	tile_map = get_tree().get_first_node_in_group("tile_map_terrain")
@@ -49,6 +51,8 @@ func select_overlapping() -> void:
 	selected_tile = overlapping_bodies[0]
 	selection_changed.emit(selected_tile)
 	
+	sprite_2d.visible = true
+	
 	# TODO: maybe have a base "Selectable" that has a "trigger" function?
 	# - a Mineable trigger would be "start_mining"?
 	# - a structure trigger would be "open_dialog"?
@@ -60,6 +64,7 @@ func clear_selection() -> void:
 		selected_tile.stop_mining()
 	
 	selected_tile = null
+	sprite_2d.visible = false
 	selection_cleared.emit()
 
 func get_distance_to_player() -> float:

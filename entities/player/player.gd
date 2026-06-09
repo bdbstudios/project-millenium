@@ -70,20 +70,6 @@ func _input(event: InputEvent) -> void:
 
 	if event.is_action_pressed("zoom_reset"):
 		zoom_reset()
-		
-	if event.is_action_pressed("hotbar_1"):
-		if building_placement_manager.is_active:
-			building_placement_manager.cancel_placement_mode()
-		else:
-			building_placement_manager.enter_placement_mode(core_scene)
-	
-	if event.is_action_pressed("select"):
-		if building_placement_manager.is_active:
-			building_placement_manager.place_structure()
-	
-	if event.is_action_pressed("cancel"):
-		if building_placement_manager.is_active:
-			building_placement_manager.cancel_placement_mode()
 
 func zoom_in() -> void:
 	target_zoom = clamp(target_zoom + zoom_step, min_zoom, max_zoom)
