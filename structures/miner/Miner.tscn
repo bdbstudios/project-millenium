@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://biopf86xssvku"]
+
+[ext_resource type="Script" uid="uid://3h2fnpupqqoy" path="res://structures/miner/miner.gd" id="1_k6ts1"]
+[ext_resource type="Texture2D" uid="uid://5ti73fvx7o4o" path="res://structures/miner/assets/Miner.png" id="2_4qo2t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kmuvu"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4qo2t"]
+size = Vector2(14, 14)
+
+[node name="Miner" type="StaticBody2D" unique_id=432672824 groups=["structures"]]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_k6ts1")
+metadata/_custom_type_script = "uid://3h2fnpupqqoy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1439581354]
+shape = SubResource("RectangleShape2D_kmuvu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1651720353]
+texture = ExtResource("2_4qo2t")
+
+[node name="PlacementArea" type="Area2D" parent="." unique_id=352136541]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlacementArea" unique_id=960607756]
+shape = SubResource("RectangleShape2D_4qo2t")

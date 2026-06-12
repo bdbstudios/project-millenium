@@ -5,6 +5,17 @@
 [ext_resource type="PackedScene" uid="uid://csy5nch8e5un8" path="res://entities/player/components/selection/Selection.tscn" id="4_eaotn"]
 [ext_resource type="Script" uid="uid://b2pkrkxiahi3r" path="res://entities/player/components/building_placement_manager/building_placement_manager.gd" id="4_g3lhm"]
 
+[sub_resource type="Gradient" id="Gradient_eaotn"]
+colors = PackedColorArray(0, 0, 0, 0.7058824, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_g3lhm"]
+gradient = SubResource("Gradient_eaotn")
+width = 24
+height = 24
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.8, 0.8)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_dthho"]
 radius = 8.0
 
@@ -12,13 +23,17 @@ radius = 8.0
 collision_layer = 16
 script = ExtResource("1_dthho")
 
+[node name="ShadowSprite" type="Sprite2D" parent="." unique_id=880069467]
+position = Vector2(3.8146973e-06, 0)
+texture = SubResource("GradientTexture2D_g3lhm")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1778875597]
 visible = false
 shape = SubResource("CircleShape2D_dthho")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1046148266]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1039449592]
+[node name="PlayerSprite" type="Sprite2D" parent="." unique_id=1039449592]
 texture = ExtResource("2_dthho")
 
 [node name="MiningLaserAnchor" type="Marker2D" parent="." unique_id=54102702]
@@ -29,4 +44,3 @@ texture = ExtResource("2_dthho")
 
 [node name="BuildingPlacementManager" type="Node2D" parent="Components" unique_id=1179914185]
 script = ExtResource("4_g3lhm")
-metadata/_custom_type_script = "uid://b2pkrkxiahi3r"

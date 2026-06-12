@@ -54,13 +54,13 @@ func select_overlapping() -> void:
 	sprite_2d.visible = true
 	
 	# TODO: maybe have a base "Selectable" that has a "trigger" function?
-	# - a Mineable trigger would be "start_mining"?
+	# - a ResourceNode trigger would be "start_mining"?
 	# - a structure trigger would be "open_dialog"?
-	if selected_tile is Mineable:
+	if selected_tile is ResourceNode:
 		selected_tile.start_mining()
 
 func clear_selection() -> void:
-	if selected_tile is Mineable:
+	if selected_tile is ResourceNode:
 		selected_tile.stop_mining()
 	
 	selected_tile = null

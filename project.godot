@@ -16,10 +16,6 @@ run/main_scene="uid://s85mspbtmsuc"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
-[autoload]
-
-EventBus="*uid://bas4xaqlu5omo"
-
 [display]
 
 window/size/viewport_width=1280
@@ -32,19 +28,21 @@ window/stretch/scale_mode="integer"
 
 folder_colors={
 "res://addons/": "gray",
-"res://components/": "pink",
+"res://core/": "yellow",
+"res://debug/": "red",
 "res://entities/": "green",
-"res://globals/": "red",
-"res://menus/": "blue",
-"res://scenes/": "orange",
-"res://ui/": "teal"
+"res://levels/": "orange",
+"res://media/": "gray",
+"res://resource_nodes/": "blue",
+"res://structures/": "teal",
+"res://ui/": "purple"
 }
 
 [global_group]
 
 player="The Player group"
 structures="Structures to be placed on the Tile Map"
-building_toolbar="The building toolbar UI element"
+bottom_toolbar="The building toolbar UI element"
 
 [input]
 

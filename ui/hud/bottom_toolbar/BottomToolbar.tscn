@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://cvyhh82fca7se"]
+
+[ext_resource type="Script" uid="uid://cwdfnmq8ua5vp" path="res://ui/hud/bottom_toolbar/bottom_toolbar.gd" id="1_i83wt"]
+
+[node name="BottomToolbar" type="CanvasLayer" unique_id=1529771766 groups=["bottom_toolbar"]]
+script = ExtResource("1_i83wt")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=325693744]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -28.0
+offset_top = -40.0
+offset_right = 28.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer" unique_id=225643965]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="PanelContainer/HBoxContainer" unique_id=559948581]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+text = "1"
+
+[node name="Button2" type="Button" parent="PanelContainer/HBoxContainer" unique_id=1154238165]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+text = "2"
+
+[node name="Button3" type="Button" parent="PanelContainer/HBoxContainer" unique_id=1757178350]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+text = "3"
+
+[node name="Button4" type="Button" parent="PanelContainer/HBoxContainer" unique_id=1355160021]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+text = "4"
+
+[node name="Button5" type="Button" parent="PanelContainer/HBoxContainer" unique_id=631773854]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+text = "5"

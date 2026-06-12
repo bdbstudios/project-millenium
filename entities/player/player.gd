@@ -18,7 +18,7 @@ class_name Player extends CharacterBody2D
 
 # TODO: hotbar manager to get which scenes should be placeable?
 @export_category("Hotbar (TEMP)")
-@export var core_scene: PackedScene = preload("res://entities/selectables/structures/core/Core.tscn")
+@export var core_scene: PackedScene = preload("res://structures/core/Core.tscn")
 
 @onready var camera: Camera2D = $Camera2D
 @onready var selection: Selection = $Components/Selection
@@ -26,7 +26,7 @@ class_name Player extends CharacterBody2D
 
 var target_zoom: float
 
-var current_cargo_weight : float = 0.0  # Scale from 0.0 to 1.0 (Full)
+var current_cargo_weight : float = 0.0
 
 func _ready() -> void:
 	camera.zoom.x = initial_zoom

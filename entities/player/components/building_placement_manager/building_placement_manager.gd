@@ -7,7 +7,7 @@ class_name BuildingPlacementManager extends Node2D
 const REMOVAL_HOLD_TIME: float = 0.5 # 500 milliseconds in seconds
 
 var player: Player
-var building_toolbar: BuildingToolbar
+var bottom_toolbar: BottomToolbar
 var tile_map_structures: TileMapLayer
 
 var is_active: bool = false
@@ -19,7 +19,7 @@ var target_structure_to_remove: Structure = null
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
-	building_toolbar = get_tree().get_first_node_in_group("building_toolbar")
+	bottom_toolbar = get_tree().get_first_node_in_group("bottom_toolbar")
 	tile_map_structures = get_tree().get_first_node_in_group("tile_map_structures")
 	
 	assert(player, "Not able to get the player")
@@ -93,7 +93,7 @@ func cancel_placement_mode() -> void:
 		ghost_preview.queue_free()
 		ghost_preview = null
 
-	building_toolbar.active_slot_index = -1
+	bottom_toolbar.active_slot_index = -1
 	
 	selected_scene = null
 	is_active = false
